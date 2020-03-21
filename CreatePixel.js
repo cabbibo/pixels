@@ -83,7 +83,14 @@ function CreatePixel(size){
   
 }
 
+
+// TODO
 function CreateAxis(){
+
+}
+
+// TODO
+function CreateControlToggle(){
 
 }
 
@@ -117,6 +124,7 @@ function Create3x3(){
   pixels.push( CreatePixel(100));
   pixels.push( CreatePixel(100));
   CreateAxis();
+  CreateControlToggle();
   pixels.SetColors = Set3x3;
   pixels.HideValues = Hide3x3;
 

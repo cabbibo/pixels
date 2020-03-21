@@ -27,7 +27,7 @@
 
 <script> CreateShader("leftGradient",100,10,false); </script>
 
-<p>Any time you see a group of pixels on this page, and you want to dig in more, you can tap on the group, and it will link you to the code. Some of them will be quick sketches, while others I hope to comment more fully! <p>
+<p>Any time you see a group of pixels on this page, and you want to dig in more, you can tap on the group, and it will link you to the code. (Don't worry if you don't want too look at the code though! ) Some of them will be quick sketches, while others I hope to comment more fully! <p>
 
 <p>Anyways lets get started with our first question:</p>
 
@@ -111,12 +111,11 @@ p.HideValues();
   Create3x3();
 </script>
 
-<p>
-Now that's alot of pixels! ( or at least more than 1 pixel ). You can get some pretty fun things happening, can even start to make your own mini art pieces! Constraint breed creativity, so see what you can do with just 9 pixels!
+<p>Now that's alot of pixels! ( or at least more than 1 pixel ). You can get some pretty fun things happening, can even start to make your own mini art pieces! Constraint breed creativity, so see what you can do with just 9 pixels!</p>
 
-The only problem, is that if we do it this way, it might take quite a bit of time to make an image with millions of pixels.
+<p>The only problem, is that if we do it this way, it might take quite a bit of time to make an image with millions of pixels.</p>
 
-When we are looking at small numbers of pixels we can comprehend, we can say thing “Oh well the top left one is turquoise, the bottom right is magenta, the one above that is bluish”
+<p>When we are looking at small numbers of pixels we can comprehend, we can say thing “Oh well the top left one is turquoise, the bottom right is magenta, the one above that is bluish”
 </p>
 
 
@@ -126,8 +125,8 @@ When we are looking at small numbers of pixels we can comprehend, we can say thi
   var p = Create3x3();
   p.SetColors([
       [.2,1.,.7],[1.,1.,1.],[1.,1.,1.],
-      [1.,1.,1.],[1.,1.,1.],[.4,.4,.6],
-      [1.,1.,1.],[1.,1.,1.],[.8,.3,.6]
+      [1.,1.,1.],[1.,1.,1.],[.3,.4,.6],
+      [1.,1.,1.],[1.,1.,1.],[1,.3,1]
     ])
   p.HideValues();
 </script>
@@ -137,5 +136,57 @@ When we are looking at small numbers of pixels we can comprehend, we can say thi
 But this is thinking about *individual* things, and we need to be thinking about how individual things make up a *whole* ! I like to call this difference of thinking ‘Quantized vs. Spectral’ 
 </p>
 
+<p>It means that our methods of changing colors can no longer be about *individual* pixels, but rather about their relationship to certain rules. This might sound complex, but really its as simple as saying:</p>
+
+<p> ‘The more right the pixel, the more red it is’ </p>
+<script>
+  var p = Create3x3();
+  p.SetColors([
+      [.3,0,0],[.6,0.,0.],[1,0,0],
+      [.3,0,0],[.6,0.,0.],[1,0,0],
+      [.3,0,0],[.6,0.,0.],[1,0,0]
+    ])
+  p.HideValues();
+</script>
+
+<p> or ‘The more up the pixel, the more blue it is’ </p>
+<script>
+  var p = Create3x3();
+  p.SetColors([
+      [0,0,1],[0,0,1],[0,0,1],
+      [0,0,.6],[0,0,.6],[0,0,.6],
+      [0,0,.3],[0,0,.3],[0,0,.3]
+    ])
+  p.HideValues();
+</script>
+
+
+<p>We can combine rules too!
+‘The more up the pixel the more blue it is, and the more right the more red’</p>
+<script>
+  var p = Create3x3();
+  p.SetColors([
+      [.3,0, 1],[.6,0, 1],[1,0,1],
+      [.3,0,.6],[.6,0,.6],[1,0,.6],
+      [.3,0,.3],[.6,0,.3],[1,0,.3]
+    ])
+  p.HideValues();
+</script>
+
+<p> Now remember something that is more blue and more red is going to be pink / magenta, so it makes sense that the top right pixel is pink.</p>
+
+<p>Try this one on for size:
+‘All pixels are pretty red, but get more blue as they go right, and more green as they go up’</p>
+<script>
+  var p = Create3x3();
+  p.SetColors([
+      [.7,1.,.2],[.7,1.,.6],[.7,1.,1],
+      [.7,.6,.2],[.7,.6,.6],[.7,.6,1],
+      [.7,.2,.2],[.7,.2,.6],[.7,.2,1]
+    ])
+  p.HideValues();
+</script>
+
+<p> With a ‘rule’ this complex its hard to see the ‘Whole’ thing, it looks like a bunch of different colored pixels, rather than a smooth fade ( a ‘gradient’ ), but if you can imagine these instructions inacted on millions of pixels, we might be able to see it getting ‘bluer’ to the right more easily. </p>
 
 </body>
