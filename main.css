@@ -1,0 +1,90 @@
+    .pixel{
+  background:#f00;
+  font-family:arial;
+  border:1px solid black;
+  display:inline-block;
+  margin:4px;
+  width:100%;
+  vertical-align: top;
+}
+
+.slider{
+  width:100%;
+  padding:0px;
+  margin:0px;
+  top:0px;
+  
+}
+
+
+
+/* The slider itself */
+.slider {
+  width:100%;
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  height: 10%; /* Specified height */
+  background: #fff; /* Grey background */
+  outline: none; /* Remove outline */
+  
+}
+
+.range{
+  width:100%;
+}
+
+.range{
+  opacity: 0.4; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.range:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 10%; /* Set a specific slider handle width */
+  height: 100%; /* Slider handle height */
+  background: #000; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 10%; /* Set a specific slider handle width */
+  height: 100%; /* Slider handle height */
+  background: #000; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider-value{
+  color:#000;
+}
+
+/*
+
+  Shader
+
+
+*/
+
+.shader{
+  //border-top:1px solid black;
+  //border-bottom:1px solid black;
+display:block;
+}
+
+
+body{
+  width:60%;
+  left:10%;
+  position:absolute;
+  border-left:1px solid black;
+  border-right:1px solid black;
+  padding:10%;
+  margin:0px;
+}

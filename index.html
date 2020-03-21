@@ -1,0 +1,141 @@
+
+<head>
+   <link rel="stylesheet" href="main.css">
+<body>
+<script src="jquery.min.js"></script>
+<script src="three.js"></script>
+<script src="CreatePixel.js"></script>
+<script src="CreateShader.js"></script>
+
+
+<h1> From the Pixel Up </h1>
+<script>
+  CreateShader("leftGradient",100,20,false);
+</script>
+
+<h2>
+ Intro
+</h2>
+
+<p> Hey there! I'm Isaac, and I want to talk to you today about pixels! Specifically how to make them look pretty, like this: </p>
+<script> CreateShader("leftGradient",100,20,false); </script>
+<p> Or like this: </p>
+<script> CreateShader("rightGradient",100,20,false); </script>
+
+<p> There are a bunch of fun ways to play with pixels online, including <a href="https://www.shadertoy.com/"> shadertoy.com </a> and <a href="http://glslsandbox.com/">glslsandbox.com</a>. You could go play after these lessons or check out one of the many other amazing tutorials like <a href="https://thebookofshaders.com/"> The Book of Shaders </a> or <a href="https://www.alanzucconi.com/2018/01/03/learning-shaders/" > Alan Zucconi's work </a> if you are working in unity. </p>
+
+
+<script> CreateShader("leftGradient",100,10,false); </script>
+
+<p>Any time you see a group of pixels on this page, and you want to dig in more, you can tap on the group, and it will link you to the code. Some of them will be quick sketches, while others I hope to comment more fully! <p>
+
+<p>Anyways lets get started with our first question:</p>
+
+<h2> What's a Pixel? </h2>
+<p>Humans have developed eyes that are sensitive to 3 colors: Red, Green and Blue.</p>
+
+<div class="infoImg">
+  <img src="coneColors.png"/>
+  <div class="imgExplanation">
+    Our sensitivity to different wavelengths. <a href="https://en.wikipedia.org/wiki/Trichromacy"> MORE HERE </a>
+  </div>
+</div>
+
+<p> A pixel is just some weird electronics that changes these values to make Red, Green, Blue, and every color in between. They might look like single points from far away, but if you zoom in, you can see they are all just these three colors together! </p>
+
+<div class="infoImg">
+  <img src="pixels.jpg"/>
+  <div class="imgExplanation">
+    a bunch o' pixels <a href="https://en.wikipedia.org/wiki/Pixel"> MORE HERE </a>
+  </div>
+</div>
+
+<p>
+Our screens are made up of a bunnnnchhhh of pixels ( 2745372 for the iphone x for example ) so even though they are single units, they can make something looks:
+</p>
+
+<p> Smooth </p>
+<script> CreateShader("smooth",100,20,false); </script>
+<p>Choppy</p>
+<script> CreateShader("choppy",100,20,false); </script>
+<p>Random</p>
+<script> CreateShader("random",100,20,false); </script>
+<p>The fact that a bunch of little things can also be one big thing is one of the deepest philosophic realizations I’ve had in my life, but lets ignore that extentintial wormhole and talk more about pixels.</p>
+
+<h2>1</h2>
+
+
+</p>
+To start off, lets just examine 1 pixel! In our case a pixel is just going to be box that has 3 values: Red, Green, and blue, which all go from 0 -> 1 ! In this case, 0 is all the way off, and 1 is all the way on!
+</p>
+
+<script>
+var p = CreatePixel(200);
+p.SetValues(.4 , 1 , .3);
+</script>
+
+<p>Go ahead and play with our pixel! What does is look like when just the Red is on? What about just the blue? Is that what you expect?</p>
+
+<p>What about all red and blue? Or red and green?</p>
+
+<p>There’s a joke about ‘programmer colors’  being these different values all the way on or all the way off, and its true they are *pretty* glaring… So just for the heck of it lets see if you can get a bit more nuanced. Try to match the pixel to the color next to it!</p>
+<script>
+var p = CreatePixel(100);
+p.SetValues(1 , 1 , 1);
+</script>
+
+<script>
+var p = CreatePixel(100);
+p.SetValues(.3 , 1 , .6);
+p.HideValues();
+</script>
+<p></p>
+<script>
+var p = CreatePixel(100);
+p.SetValues(1 , 1 , 1);
+</script>
+
+<script>
+var p = CreatePixel(100);
+p.SetValues(.57 , .1 , 1);
+p.HideValues();
+</script>
+
+
+<h2> 3x3</h2>
+
+<p>For this next section we are going to be looking just at a grid of 9 “pixels” set up in a 3x3 grid. This might not seem like its really going to help us understand
+ 2745372 pixels, but JUST YOU WAIT!</p>
+
+<script>
+  Create3x3();
+</script>
+
+<p>
+Now that's alot of pixels! ( or at least more than 1 pixel ). You can get some pretty fun things happening, can even start to make your own mini art pieces! Constraint breed creativity, so see what you can do with just 9 pixels!
+
+The only problem, is that if we do it this way, it might take quite a bit of time to make an image with millions of pixels.
+
+When we are looking at small numbers of pixels we can comprehend, we can say thing “Oh well the top left one is turquoise, the bottom right is magenta, the one above that is bluish”
+</p>
+
+
+
+
+<script>
+  var p = Create3x3();
+  p.SetColors([
+      [.2,1.,.7],[1.,1.,1.],[1.,1.,1.],
+      [1.,1.,1.],[1.,1.,1.],[.4,.4,.6],
+      [1.,1.,1.],[1.,1.,1.],[.8,.3,.6]
+    ])
+  p.HideValues();
+</script>
+
+
+<p>
+But this is thinking about *individual* things, and we need to be thinking about how individual things make up a *whole* ! I like to call this difference of thinking ‘Quantized vs. Spectral’ 
+</p>
+
+
+</body>
